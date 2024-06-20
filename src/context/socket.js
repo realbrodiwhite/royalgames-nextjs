@@ -5,7 +5,7 @@ import lobbySlice from "../lobbySlice";
 import { useSelector } from "react-redux";
 import ReactDOM from 'react-dom/client';
 import { useNavigate } from 'react-router-dom';
-import Header from '../features/header/Header';
+import Header from '../components/header/Header';
 
 export const socket = io.connect('https://royal-games.replit.app');
 // export const socket = io.connect('http://localhost:8080');

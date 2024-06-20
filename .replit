@@ -1,0 +1,38 @@
+modules = ["nodejs-20", "web", "nix"]
+hidden = [".config", "package-lock.json"]
+run = "npm run start"
+
+[gitHubImport]
+requiredFiles = [".replit", "replit.nix", "package.json", "package-lock.json"]
+
+[nix]
+channel = "stable-23_11"
+
+[unitTest]
+language = "nodejs"
+
+[deployment]
+run = ["sh", "-c", "npm run start"]
+deploymentTarget = "cloudrun"
+ignorePorts = false
+
+[[ports]]
+localPort = 3000
+externalPort = 3002
+
+[[ports]]
+localPort = 8080
+externalPort = 80
+
+[[ports]]
+localPort = 38971
+externalPort = 3000
+exposeLocalhost = true
+
+[[ports]]
+localPort = 40691
+externalPort = 3001
+exposeLocalhost = true
+
+[objectStorage]
+defaultBucketID = "replit-objstore-180b5f32-e180-4fb6-b3be-1798854748c6"
